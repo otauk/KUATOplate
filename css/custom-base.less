@@ -1,0 +1,304 @@
+/*
+*	##############################
+*	custom-base.css
+*	-	provides basic styles
+*	- useful for quick layouting / styling
+*	+++++
+*	version: 1.0
+*	+++++
+*	to-do: transfer to less with variables for more flexibility
+*	##############################
+*/
+
+/*
+*	=============================================
+*	COLORS
+*	=============================================
+*/
+@color-F: 			rgb(255,255,255);		// 	white
+@color-0: 			rgb(000,000,000);		// 	black
+@color-1: 			rgb(218,54,68);			// 	red
+@color-2: 			rgb(232,183,50);		//	yellow
+@color-3: 			rgb(247,235,202);		//	pale
+@color-4: 			rgb(49,218,156);		// 	green
+@color-5: 			rgb(51,172,226);		// 	blue
+
+/*
+*	=============================================
+*	LAYOUT STYLES
+*	=============================================
+*/
+
+@none-px: 			0;
+@small-px: 			15px;
+@large-px: 			30px;
+
+@small-em:			5em;
+@medium-em:			10em;
+@large-em:			15em;
+@xlarge-em:			20em;
+@big-em:			25em;
+
+@none-percent: 		0%;
+@small-percent:		25%;
+@medium-percent:	50%;
+@large-percent:		75%;
+@xlarge-percent:	100%;
+
+@fs-small: 			80%;
+@fs-regular:		100%;
+@fs-medium: 		125%;
+@fs-large:			150%;
+@fs-xlarge:			175%;
+@fs-big: 			200%;
+
+@lh-small:			0.75em;
+@lh-regular:		1.00em;
+@lh-medium:			1.25em;
+@lh-large:			1.50em;
+@lh-xlarge:			1.75em;
+@lh-big:			2.00em;
+
+@index-0:			0;
+@index-1:			1000;
+@index-2:			2000;
+@index-3:			3000;
+@index-4:			4000;
+@index-5:			5000;
+
+@opacity-strong:	0.25;
+@opacity-medium:	0.5;
+@opacity-light:		0.75;
+@opacity-vlight:	0.9;
+@opacity-none:		1;
+
+.border-radius(@radius) {
+  -webkit-border-radius: @radius;
+     -moz-border-radius: @radius;
+          border-radius: @radius;
+}
+
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	padding
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.padding-0 {padding:@none-px;}
+.padding-small {padding:@small-px;}
+.padding-big {padding:@large-px;}
+
+.padding-lr-0 {padding-left: @none-px;padding-right: @none-px;}
+.padding-lr-small {padding-left: @small-px;padding-right: @small-px;}
+.padding-lr-big {padding-left: @large-px;padding-right: @large-px;}
+.padding-tb-0 {padding-top: @none-px;padding-bottom: @none-px;}
+.padding-tb-small {padding-top: @small-px;padding-bottom: @small-px;}
+.padding-tb-big {padding-top: @large-px;padding-bottom: @large-px;}
+
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	margin
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.margin-0 {margin: @none-px;}
+.margin-small{margin: @small-px;}
+.margin-big{margin: @large-px;}
+
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	width
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.w25{width:@small-percent;}
+.w50{width:@medium-percent;}
+.w75{width:@large-percent;}
+.w100{width:@xlarge-percent;}
+
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	min-width
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.min-w25{min-width: @small-percent;}
+.min-w50{min-width: @medium-percent;}
+.min-w75{min-width: @large-percent;}
+.min-w100{min-width: @xlarge-percent;}
+
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	max-width
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.max-w980 {max-width:980px;}
+.max-w1170 {max-width:1170px;}
+
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	height
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.h-small	{min-height: @small-em;}
+.h-medium	{min-height: @medium-em;}
+.h-large	{min-height: @large-em;}
+.h-xlarge	{min-height: @xlarge-em;}
+.h-big		{min-height: @big-em;}
+
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	position
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.pos-left{float:left;}
+.pos-center{margin:0 auto;}
+.pos-right{float:right;}
+.pos-absolute{position: absolute;}
+.pos-relative{position: relative;}
+
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	z-index
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.z-0{z-index:@index-0;}
+.z-1{z-index:@index-1;}
+.z-2{z-index:@index-2;}
+.z-3{z-index:@index-3;}
+.z-4{z-index:@index-4;}
+.z-5{z-index:@index-5;}
+
+/*
+*	=============================================
+*	TEXT-STYLES
+*	=============================================
+*/
+
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	font-family
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+
+@font:	"Helvetica Neue", Arial, sans-serif;
+
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	font-size
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.fs-small{font-size: @fs-small;}
+.fs-regular{font-size: @fs-regular;}
+.fs-medium{font-size: @fs-medium;}
+.fs-large{font-size: @fs-large;}
+.fs-xlarge{font-size: @fs-xlarge;}
+.fs-big{font-size: @fs-big;}
+
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	line-height
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.lh-100 {line-height: 1em;}
+.lh-125 {line-height: 1.25em;}
+.lh-150 {line-height: 1.5em;}
+.lh-175 {line-height: 1.75em;}
+.lh-200 {line-height: 2em;}
+
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	letter-spacing
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.ls-1{letter-spacing:0.1em;}
+.ls-2{letter-spacing:0.2em;}
+.ls-3{letter-spacing:0.3em;}
+.ls-4{letter-spacing:0.4em;}
+.ls-5{letter-spacing:0.5em;}
+.ls-6{letter-spacing:0.5em;}
+.ls-7{letter-spacing:0.7em;}
+.ls-8{letter-spacing:0.8em;}
+.ls-9{letter-spacing:0.9em;}
+.ls-10{letter-spacing:1em;}
+
+/*
+*	=============================================
+*	SITE-SPECIFIC (auslagern)
+*	=============================================
+*/
+
+body {
+	font-family: @font;
+	font-size: @fs-regular;
+	background: @color-F;
+}
+
+.bgcolor-1 {background-color:@color-1};
+.bgcolor-2 {background-color:@color-2};
+.bgcolor-3 {background-color:@color-3};
+.bgcolor-4 {background-color:@color-4};
+.bgcolor-5 {background-color:@color-5};
+
+.opactiy-1 {opacity: 0.5;}
+
+a {
+	&:link, &:visited {
+		color:@color-5;
+		text-decoration: none;
+	}
+	&:hover, &:active, &:focus {
+		background-color: @color-5;
+		color: @color-F;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color:@color-1;
+}
+
+h1 {
+	font-size: @fs-big;
+	text-transform: uppercase;
+	}
+
+h2 {
+	font-size:@fs-xlarge;
+	}
+
+.btn {
+	display:inline-block;
+	padding:0.5em;
+	.border-radius(4px);
+	text-decoration:none;
+	text-align:center;
+	cursor:pointer;
+	opacity: @opacity-vlight;
+	font-size: 100%;
+	font-family: 'Open Sans', sans-serif;
+	&:hover, &:active, &:focus {
+		text-decoration:none;
+		opacity: @opacity-none;
+		}
+	}
+
+.alert {
+    .border-radius(4px);
+    display: block;
+	padding:@large-px;
+    vertical-align: middle;
+
+		&:before {
+			font-family: FontAwesome;
+			padding-right: @small-px;
+
+			&.positive {
+				background-color: @color-4;
+				content: "\f00c";
+			}
+			&.negative {
+				background-color: @color-1;
+				content: "\f071";
+			}
+			&.neutral {
+				background-color: @color-2;
+				content: "\f12a";
+			}
+		}
+	}

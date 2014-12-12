@@ -1,0 +1,366 @@
+/*
+*	##############################
+*	custom-base.css
+*	-	provides basic styles
+*	- useful for quick layouting / styling
+*	+++++
+*	version: 1.0
+*	+++++
+*	to-do: transfer to less with variables for more flexibility
+*	##############################
+*/
+/*
+*	=============================================
+*	COLORS
+*	=============================================
+*/
+/*
+*	=============================================
+*	LAYOUT STYLES
+*	=============================================
+*/
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	padding
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.padding-0 {
+  padding: 0;
+}
+.padding-small {
+  padding: 15px;
+}
+.padding-big {
+  padding: 30px;
+}
+.padding-lr-0 {
+  padding-left: 0;
+  padding-right: 0;
+}
+.padding-lr-small {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.padding-lr-big {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.padding-tb-0 {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.padding-tb-small {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.padding-tb-big {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	margin
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.margin-0 {
+  margin: 0;
+}
+.margin-small {
+  margin: 15px;
+}
+.margin-big {
+  margin: 30px;
+}
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	width
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.w25 {
+  width: 25%;
+}
+.w50 {
+  width: 50%;
+}
+.w75 {
+  width: 75%;
+}
+.w100 {
+  width: 100%;
+}
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	min-width
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.min-w25 {
+  min-width: 25%;
+}
+.min-w50 {
+  min-width: 50%;
+}
+.min-w75 {
+  min-width: 75%;
+}
+.min-w100 {
+  min-width: 100%;
+}
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	max-width
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.max-w980 {
+  max-width: 980px;
+}
+.max-w1170 {
+  max-width: 1170px;
+}
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	height
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.h-small {
+  min-height: 5em;
+}
+.h-medium {
+  min-height: 10em;
+}
+.h-large {
+  min-height: 15em;
+}
+.h-xlarge {
+  min-height: 20em;
+}
+.h-big {
+  min-height: 25em;
+}
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	position
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.pos-left {
+  float: left;
+}
+.pos-center {
+  margin: 0 auto;
+}
+.pos-right {
+  float: right;
+}
+.pos-absolute {
+  position: absolute;
+}
+.pos-relative {
+  position: relative;
+}
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	z-index
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.z-0 {
+  z-index: 0;
+}
+.z-1 {
+  z-index: 1000;
+}
+.z-2 {
+  z-index: 2000;
+}
+.z-3 {
+  z-index: 3000;
+}
+.z-4 {
+  z-index: 4000;
+}
+.z-5 {
+  z-index: 5000;
+}
+/*
+*	=============================================
+*	TEXT-STYLES
+*	=============================================
+*/
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	font-family
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	font-size
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.fs-small {
+  font-size: 80%;
+}
+.fs-regular {
+  font-size: 100%;
+}
+.fs-medium {
+  font-size: 125%;
+}
+.fs-large {
+  font-size: 150%;
+}
+.fs-xlarge {
+  font-size: 175%;
+}
+.fs-big {
+  font-size: 200%;
+}
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	line-height
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.lh-100 {
+  line-height: 1em;
+}
+.lh-125 {
+  line-height: 1.25em;
+}
+.lh-150 {
+  line-height: 1.5em;
+}
+.lh-175 {
+  line-height: 1.75em;
+}
+.lh-200 {
+  line-height: 2em;
+}
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	letter-spacing
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+.ls-1 {
+  letter-spacing: 0.1em;
+}
+.ls-2 {
+  letter-spacing: 0.2em;
+}
+.ls-3 {
+  letter-spacing: 0.3em;
+}
+.ls-4 {
+  letter-spacing: 0.4em;
+}
+.ls-5 {
+  letter-spacing: 0.5em;
+}
+.ls-6 {
+  letter-spacing: 0.5em;
+}
+.ls-7 {
+  letter-spacing: 0.7em;
+}
+.ls-8 {
+  letter-spacing: 0.8em;
+}
+.ls-9 {
+  letter-spacing: 0.9em;
+}
+.ls-10 {
+  letter-spacing: 1em;
+}
+/*
+*	=============================================
+*	SITE-SPECIFIC (auslagern)
+*	=============================================
+*/
+body {
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  font-size: 100%;
+  background: #ffffff;
+}
+.bgcolor-1 {
+  background-color: #da3644;
+}
+.bgcolor-2 {
+  background-color: #e8b732;
+}
+.bgcolor-3 {
+  background-color: #f7ebca;
+}
+.bgcolor-4 {
+  background-color: #31da9c;
+}
+.bgcolor-5 {
+  background-color: #33ace2;
+}
+.opactiy-1 {
+  opacity: 0.5;
+}
+a:link,
+a:visited {
+  color: #33ace2;
+  text-decoration: none;
+}
+a:hover,
+a:active,
+a:focus {
+  background-color: #33ace2;
+  color: #ffffff;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #da3644;
+}
+h1 {
+  font-size: 200%;
+  text-transform: uppercase;
+}
+h2 {
+  font-size: 175%;
+}
+.btn {
+  display: inline-block;
+  padding: 0.5em;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  opacity: 0.9;
+  font-size: 100%;
+  font-family: 'Open Sans', sans-serif;
+}
+.btn:hover,
+.btn:active,
+.btn:focus {
+  text-decoration: none;
+  opacity: 1;
+}
+.alert {
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  display: block;
+  padding: 30px;
+  vertical-align: middle;
+}
+.alert:before {
+  font-family: FontAwesome;
+  padding-right: 15px;
+}
+.alert:before.positive {
+  background-color: #31da9c;
+  content: "\f00c";
+}
+.alert:before.negative {
+  background-color: #da3644;
+  content: "\f071";
+}
+.alert:before.neutral {
+  background-color: #e8b732;
+  content: "\f12a";
+}
