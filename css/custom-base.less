@@ -6,14 +6,6 @@
 *	+++++
 *	version: 1.0
 *	+++++
-*	to-do: transfer to less with variables for more flexibility
-*
-*	bootstrap Kategorien:
-*	@brand-primary: #428bca;
-*	@brand-success: #5cb85c;
-*	@brand-info:    #5bc0de;
-*	@brand-warning: #f0ad4e;
-*	@brand-danger:  #d9534f;
 *
 *	Reassign Variables
 *	@alert-message-background: @brand-info;
@@ -29,11 +21,19 @@
 */
 @color-F: 			rgb(255,255,255);		// 	white
 @color-0: 			rgb(000,000,000);		// 	black
-@color-1: 			rgb(218,54,68);			// 	red
-@color-2: 			rgb(232,183,50);			//		yellow
-@color-3: 			rgb(247,235,202);		//		pale
-@color-4: 			rgb(49,218,156);			// 	green
-@color-5: 			rgb(51,172,226);			// 	blue
+@primary: 			rgb(51,172,226);			// 	blue
+@success: 			rgb(49,218,156);			// 	green
+@info: 					rgb(247,235,202);		//		pale
+@warning: 			rgb(232,183,50);			//		yellow
+@danger: 				rgb(218,54,68);			// 	red
+
+@primary-light:	lighten(@primary, 5%);
+@success-light:	lighten(@success, 5%);
+@info-light:	lighten(@info, 5%);
+@warning-light:	lighten(@warning, 5%);
+@danger-light:	lighten(@danger, 5%);
+
+
 /*
 *	=============================================
 *	FONTS
@@ -41,14 +41,36 @@
 */
 @font:					'OpenSans';
 @font-FA:			'FontAwesome';
+
+@fs-base:			14px;
+@fs-large:         	ceil((@fs-base * 1.25)); // ~18px
+@fs-small:         	ceil((@fs-base * 0.85)); // ~12px
+@fs-h1:            	floor((@fs-base * 2.6)); // ~36px
+@fs-h2:            	floor((@fs-base * 2.15)); // ~30px
+@fs-h3:            	ceil((@fs-base * 1.7)); // ~24px
+@fs-h4:            	ceil((@fs-base * 1.25)); // ~18px
+@fs-h5:            	@fs-base;
+@fs-h6:            	ceil((@fs-base * 0.85)); // ~12px
+@line-height-base:        1.428571429; // 20/14
+
+/*
+*	=============================================
+*	FONTS
+*	=============================================
+*/
+@icon-primary: 		"\f054";				// Haken
+@icon-success: 		"\f00c";				//
+@icon-info: 				"\f0eb";				//
+@icon-warning:		"\f071";
+@icon-danger:			"\f00d";
+@icon-list:				"\f105";				// spitze Klammer rechts
 /*
 *	=============================================
 *	LAYOUT STYLES
 *	=============================================
 */
-@none-px: 			0;
-@small-px: 			15px;
-@large-px: 			30px;
+@space-base: 		15px;
+@space-large: 		ceil((@space-base * 2.0));
 @small-em:			5em;
 @medium-em:			10em;
 @large-em:			15em;
@@ -61,18 +83,6 @@
 @twothird-percent: 66%;
 @large-percent:		75%;
 @xlarge-percent:	100%;
-@fs-small: 			80%;
-@fs-regular:		100%;
-@fs-medium: 		125%;
-@fs-large:			150%;
-@fs-xlarge:			175%;
-@fs-big: 			200%;
-@lh-small:			0.75em;
-@lh-regular:		1.00em;
-@lh-medium:			1.25em;
-@lh-large:			1.50em;
-@lh-xlarge:			1.75em;
-@lh-big:			2.00em;
 @index-0:			0;
 @index-1:			1000;
 @index-2:			2000;
@@ -94,23 +104,23 @@
 * 	padding
 *	%%%%%%%%%%%%%%%%%%%%
 */
-.padding-0 {padding:@none-px;}
-.padding-small {padding:@small-px;}
-.padding-big {padding:@large-px;}
-.padding-lr-0 {padding-left: @none-px;padding-right: @none-px;}
-.padding-lr-small {padding-left: @small-px;padding-right: @small-px;}
-.padding-lr-big {padding-left: @large-px;padding-right: @large-px;}
-.padding-tb-0 {padding-top: @none-px;padding-bottom: @none-px;}
-.padding-tb-small {padding-top: @small-px;padding-bottom: @small-px;}
-.padding-tb-big {padding-top: @large-px;padding-bottom: @large-px;}
+.padding-0 {padding:0;}
+.padding-small {padding:@space-base;}
+.padding-big {padding:@space-large;}
+.padding-lr-0 {padding-left: 0;padding-right: 0;}
+.padding-lr-small {padding-left: @space-base;padding-right: @space-base;}
+.padding-lr-big {padding-left: @space-large;padding-right: @space-large;}
+.padding-tb-0 {padding-top: 0;padding-bottom: 0;}
+.padding-tb-small {padding-top: @space-base;padding-bottom: @space-base;}
+.padding-tb-big {padding-top: @space-large;padding-bottom: @space-large;}
 /*
 *	%%%%%%%%%%%%%%%%%%%%
 * 	margin
 *	%%%%%%%%%%%%%%%%%%%%
 */
-.margin-0 {margin: @none-px;}
-.margin-small{margin: @small-px;}
-.margin-big{margin: @large-px;}
+.margin-0 {margin: 0;}
+.margin-small{margin: @space-base;}
+.margin-big{margin: @space-large;}
 /*
 *	%%%%%%%%%%%%%%%%%%%%
 * 	width
@@ -184,12 +194,10 @@
 * 	font-size
 *	%%%%%%%%%%%%%%%%%%%%
 */
-.fs-small{font-size: @fs-small;}
-.fs-regular{font-size: @fs-regular;}
-.fs-medium{font-size: @fs-medium;}
+.fs-base{font-size: @fs-base;}
 .fs-large{font-size: @fs-large;}
-.fs-xlarge{font-size: @fs-xlarge;}
-.fs-big{font-size: @fs-big;}
+.fs-small{font-size: @fs-small;}
+
 /*
 *	%%%%%%%%%%%%%%%%%%%%
 * 	line-height
@@ -220,10 +228,6 @@
 * 	icons
 *	%%%%%%%%%%%%%%%%%%%%
 */
-@positive: "\f00c";				// Haken
-@negative: "\f071";				// Warndreieck
-@neutral: "\f12a";				// Ausrufezeichen
-@list:	"\f105";					// spitze Klammer rechts
 /*
 *	=============================================
 *	SITE-SPECIFIC (auslagern)
@@ -239,33 +243,34 @@
 }
 body {
 	font-family: @font;
-	font-size: @fs-regular;
+	font-size: @fs-base;
+	line-height: @line-height-base;
 	background: @color-F;
 	margin: 0;
 	padding: 0;
 }
 .header, .footer {
 	min-height: @medium-em;
-	background-color: @color-5;
+	background-color: @primary;
 	padding: none;
 }
 .main {
-	padding-left: @small-px;
-	padding-right: @small-px;
+	padding-left: @space-base;
+	padding-right: @space-base;
 }
 .navi {
-	border-bottom:1px solid @color-3;
+	border-bottom:1px solid @info;
 	text-align: left;
 	& ul {
 		margin:0;
-		padding: @small-px;
+		padding: @space-base;
 		& li {
 			margin-right:-4px;
 			cursor: pointer;
 			display: inline;
-			padding: @small-px;
+			padding: @space-base;
 			&:hover, &.active {
-				background-color: @color-3;
+				background-color: @info;
 			}
 			&:before {
 				content:'';
@@ -273,52 +278,54 @@ body {
 		}
 	}
 }
-.bgcolor-1 {background-color:@color-1};
-.bgcolor-2 {background-color:@color-2};
-.bgcolor-3 {background-color:@color-3};
-.bgcolor-4 {background-color:@color-4};
-.bgcolor-5 {background-color:@color-5};
+.bgdanger {background-color:@danger};
+.bgwarning {background-color:@warning};
+.bginfo {background-color:@info};
+.bgsuccess {background-color:@success};
+.bgprimary {background-color:@primary};
 a {
 	&:link, &:visited {
-		color:@color-5;
+		color:@primary;
 		text-decoration: none;
 	}
 	&:hover, &:active, &:focus {
-		background-color: @color-5;
+		background-color: @primary;
 		color: @color-F;
 	}
 }
 h1, h2, h3, h4, h5, h6 {
-	color:@color-1;
-	}
+	color:@danger;
+}
+
 h1 {
-	font-size: @fs-big;
+	font-size: @fs-h1;
 	text-transform: uppercase;
 	}
+
 h2 {
-	font-size:@fs-xlarge;
+	font-size:@fs-h2;
 	}
 ul {
-	padding: @small-px;
+	padding: @space-base;
 	list-style-type: none;
 	& li:before {
 		font-family: @font-FA;
-		content: @list;
+		content: @icon-list;
 		padding-right: 5px;
 	}
 	& ul {
-		padding:0 @small-px;
+		padding:0 @space-base;
 		margin-left:-5px;
 		& li:before {
 			font-family: @font-FA;
-			content: @list@list;
+			content:  @icon-list@icon-list;
 			padding-right: 5px;
 		}
 		& ul {
 			margin-left:3px;
 			& li:before {
 			font-family: @font-FA;
-			content: @list@list@list;
+			content:  @icon-list@icon-list@icon-list;
 			padding-right: 5px;
 			}
 		}
@@ -326,11 +333,11 @@ ul {
 }
 input {
 	.border-radius(4px);
-	border: 1px solid @color-5;
-	font-size: @fs-regular;
-	padding: @small-px;
+	border: 1px solid @primary;
+	font-size: @fs-base;
+	padding: @space-base;
 	&:hover, &:active, &:focus {
-		box-shadow: 0px 0px 5px lighten(@color-5, 10%);
+		box-shadow: 0px 0px 5px @primary-light;
 		outline: none;
 	}
 }
@@ -344,6 +351,21 @@ input {
 	cursor:pointer;
 	opacity: @opacity-vlight;
 	font-size: 100%;
+	&.primary {
+		background-color: @primary;
+	}
+	&.success {
+		background-color: @success;
+	}
+	&.info {
+		background-color: @info;
+	}
+	&.warning {
+		background-color: @warning;
+	}
+	&.danger {
+		background-color: @danger;
+	}
 	&:hover, &:active, &:focus {
 		text-decoration:none;
 		opacity: @opacity-none;
@@ -352,53 +374,65 @@ input {
 .alert {
     .border-radius(4px);
     display: block;
-	padding:@small-px;
-	margin-top:@small-px;
-	margin-bottom:@small-px;
+	padding:@space-base;
+	margin-top:@space-base;
+	margin-bottom:@space-base;
     vertical-align: middle;
     	&:before {
 			font-family: @font-FA;
-			padding-right: @small-px;
+			padding-right: @space-base;
 		}
-		&.positive {
-			background-color: @color-4;
+		&.primary {
+			background-color: @primary-light;
 			&:before {
-				content: @positive;
+				content: @icon-primary;
 	    			}
 	    	}
-	    &.negative {
-			background-color: @color-1;
+		&.success {
+			background-color: @success-light;
 			&:before {
-				content: @negative;
+				content: @icon-success;
 	    			}
 	    	}
-	    &.neutral {
-			background-color: @color-2;
+	    &.info {
+			background-color: @info-light;
 			&:before {
-				content: @neutral;
+				content: @icon-info;
+	    			}
+	    	}
+	    &.warning {
+			background-color: @warning-light;
+			&:before {
+				content: @icon-warning;
+	    			}
+	    	}
+	    &.danger {
+			background-color: @danger-light;
+			&:before {
+				content: @icon-danger;
 	    			}
 	    	}
 	}
 .tbl {
 	width: @xlarge-percent;
 	border-collapse: collapse;
-	margin: @small-px 0;
-	background: @color-3;
+	margin: @space-base 0;
+	background: @info;
 	& th, th:hover {
-		background-color: @color-2;
-		padding: @small-px;
+		background-color: @warning;
+		padding: @space-base;
 		color:@color-0;
 	}
 	& tr:nth-child(2n+1) {
-		background-color: lighten(@color-3, 5%);
+		background-color: @info-light;
 		}
 	& tr:hover {
-		background-color:@color-1;
+		background-color:@danger;
 		color: @color-F;
 		}
 	& td {
 		width:@onethird-percent;
 		text-align: center;
-		padding: @small-px;
+		padding: @space-base;
 	}
 }

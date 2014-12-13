@@ -74,14 +74,16 @@
 				</table>
 
 
-				<button class="btn bgcolor-1">Button 1</button>
-				<button class="btn bgcolor-2">Button 2</button>
-				<button class="btn bgcolor-3">Button 3</button>
-				<button class="btn bgcolor-4">Button 4</button>
-				<button class="btn bgcolor-5">Button 5</button>
-				<div class="alert positive">Bestätigung</div>
-				<div class="alert negative">Warnung</div>
-				<div class="alert neutral">Hinweis</div>
+				<button class="btn primary">Button 1</button>
+				<button class="btn success">Button 2</button>
+				<button class="btn info">Button 3</button>
+				<button class="btn warning">Button 4</button>
+				<button class="btn danger">Button 5</button>
+				<div class="alert primary">Standard</div>
+				<div class="alert success">Erfolg</div>
+				<div class="alert info">Hinweis</div>
+				<div class="alert warning">Warnung</div>
+				<div class="alert danger">Gefahr</div>
 			</div>
 			<div class="footer">
 			</div>
