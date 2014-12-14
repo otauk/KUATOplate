@@ -30,6 +30,36 @@
 				<p>
 					Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 				</p>
+				<div class="container outline">
+				    <div class="row">
+				        <div class="col-1"><p>col-1</p></div>
+				        <div class="col-1"><p>col-1</p></div>
+				        <div class="col-1"><p>col-1</p></div>
+				        <div class="col-1"><p>col-1</p></div>
+				        <div class="col-1"><p>col-1</p></div>
+				        <div class="col-1"><p>col-1</p></div>
+				    </div>
+				    <div class="row">
+				        <div class="col-2"><p>col-2</p></div>
+				        <div class="col-2"><p>col-2</p></div>
+				        <div class="col-2"><p>col-2</p></div>
+				    </div>
+				    <div class="row">
+				        <div class="col-3"><p>col-3</p></div>
+				        <div class="col-3"><p>col-3</p></div>
+				    </div>
+				    <div class="row">
+				        <div class="col-4"><p>col-4</p></div>
+				        <div class="col-2"><p>col-2</p></div>
+				    </div>
+				    <div class="row">
+				        <div class="col-5"><p>col-5</p></div>
+				        <div class="col-1"><p>col-1</p></div>
+				    </div>
+				    <div class="row">
+				        <div class="col-6"><p>col-6</p></div>
+				    </div>
+				</div>
 				<p>
 					<input type="text" name="name" />
 				</p>

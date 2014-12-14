@@ -26,14 +26,16 @@
 @info: 					rgb(247,235,202);		//		pale
 @warning: 			rgb(232,183,50);			//		yellow
 @danger: 				rgb(218,54,68);			// 	red
-
 @primary-light:	lighten(@primary, 5%);
 @success-light:	lighten(@success, 5%);
-@info-light:	lighten(@info, 5%);
+@info-light:			lighten(@info, 5%);
 @warning-light:	lighten(@warning, 5%);
-@danger-light:	lighten(@danger, 5%);
-
-
+@danger-light:		lighten(@danger, 5%);
+@primary-dark:	darken(@primary, 5%);
+@success-dark:	darken(@success, 5%);
+@info-dark:			darken(@info, 5%);
+@warning-dark:	darken(@warning, 5%);
+@danger-dark:		darken(@danger, 5%);
 /*
 *	=============================================
 *	FONTS
@@ -41,7 +43,6 @@
 */
 @font:					'OpenSans';
 @font-FA:			'FontAwesome';
-
 @fs-base:			14px;
 @fs-large:         	ceil((@fs-base * 1.25)); // ~18px
 @fs-small:         	ceil((@fs-base * 0.85)); // ~12px
@@ -52,10 +53,9 @@
 @fs-h5:            	@fs-base;
 @fs-h6:            	ceil((@fs-base * 0.85)); // ~12px
 @line-height-base:        1.428571429; // 20/14
-
 /*
 *	=============================================
-*	FONTS
+*	ICONS
 *	=============================================
 */
 @icon-primary: 		"\f054";				// Haken
@@ -71,11 +71,10 @@
 */
 @space-base: 		15px;
 @space-large: 		ceil((@space-base * 2.0));
-@small-em:			5em;
-@medium-em:			10em;
-@large-em:			15em;
-@xlarge-em:			20em;
-@big-em:			25em;
+@em-base:			5em;
+@medium-em:		ceil((@em-base * 2.0));
+@large-em:			ceil((@em-base * 3.0));
+@xlarge-em:		ceil((@em-base * 4.0));
 @none-percent: 		0%;
 @small-percent:		25%;
 @onethird-percent: 33%;
@@ -153,11 +152,6 @@
 * 	height
 *	%%%%%%%%%%%%%%%%%%%%
 */
-.h-small	{min-height: @small-em;}
-.h-medium	{min-height: @medium-em;}
-.h-large	{min-height: @large-em;}
-.h-xlarge	{min-height: @xlarge-em;}
-.h-big		{min-height: @big-em;}
 /*
 *	%%%%%%%%%%%%%%%%%%%%
 * 	position
@@ -186,18 +180,12 @@
 */
 /*
 *	%%%%%%%%%%%%%%%%%%%%
-* 	font-family
-*	%%%%%%%%%%%%%%%%%%%%
-*/
-/*
-*	%%%%%%%%%%%%%%%%%%%%
 * 	font-size
 *	%%%%%%%%%%%%%%%%%%%%
 */
 .fs-base{font-size: @fs-base;}
 .fs-large{font-size: @fs-large;}
 .fs-small{font-size: @fs-small;}
-
 /*
 *	%%%%%%%%%%%%%%%%%%%%
 * 	line-height
@@ -224,23 +212,84 @@
 .ls-9{letter-spacing:0.9em;}
 .ls-10{letter-spacing:1em;}
 /*
-*	%%%%%%%%%%%%%%%%%%%%
-* 	icons
-*	%%%%%%%%%%%%%%%%%%%%
-*/
-/*
 *	=============================================
 *	SITE-SPECIFIC (auslagern)
 *	=============================================
 */
-.header,
-.main,
-.footer
- {
-	padding: 0;
-	margin: 0;
-	font-size: 100%;
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+	}
+
+*{
+	 box-sizing: border-box;
+	}
+
+/*-- our cleafix hack -- */
+.row:before,
+.row:after {
+    content:"";
+    display: table ;
+    clear:both;
+	}
+
+[class*='col-'] {
+    float: left;
+    min-height: 1px;
+    width: 16.66%;
+    /*-- our gutter -- */
+    padding: @space-base;
+    background-color: @info;
+	}
+
+.col-1{ width: 16.66%; }
+.col-2{ width: 33.33%; }
+.col-3{ width: 50%;    }
+.col-4{ width: 66.66%; }
+.col-5{ width: 83.33%; }
+.col-6{ width: 100%;   }
+
+@media all and (max-width:800px){
+    .col-1{ width: 33.33%;  }
+    .col-2{ width: 50%;     }
+    .col-3{ width: 100%;  }
+    .col-4{ width: 100%;    }
+    .col-5{ width: 100%;    }
+    .col-6{ width: 100%;    }
+
+    .row .col-2:last-of-type{
+        width: 100%;
+    }
+
+    .row .col-5 ~ .col-1{
+        width: 100%;
+    }
 }
+
+@media all and (max-width:650px){
+    .col-1{ width: 50%;     }
+    .col-2{ width: 100%;    }
+    .col-3{ width: 100%;    }
+    .col-4{ width: 100%;    }
+    .col-5{ width: 100%;    }
+    .col-6{ width: 100%;    }
+}
+
+.outline, .outline *{outline: 1px solid @primary;}
+
+
+/*-- some extra column content styling --*/
+[class*='col-'] > p {
+ background-color: @primary-light;
+ padding: 0;
+ margin: 0;
+ text-align: center;
+ color: white;
+}
+
+
 body {
 	font-family: @font;
 	font-size: @fs-base;
@@ -249,6 +298,7 @@ body {
 	margin: 0;
 	padding: 0;
 }
+
 .header, .footer {
 	min-height: @medium-em;
 	background-color: @primary;
@@ -296,12 +346,10 @@ a {
 h1, h2, h3, h4, h5, h6 {
 	color:@danger;
 }
-
 h1 {
 	font-size: @fs-h1;
 	text-transform: uppercase;
 	}
-
 h2 {
 	font-size:@fs-h2;
 	}
