@@ -291,9 +291,11 @@
 body {
 	.font-base;
 	font-size: @fs-base;
-	background: @color-F;
+	background: @info;
 	margin: 0;
+	overflow-x: hidden;
 }
+
 .header, .footer {
 	min-height: @medium-em;
 	background-color: @primary;
@@ -310,11 +312,120 @@ body {
 *	%%%%%%%%%%%%%%%%%%%%
 */
 
- @import "navi-dropdown.less";
+// Standard
+@import "navi-dropdown.less";
+label[for="nav-trigger"] {display:none;}
+.mobile_nav{display: none;}
+@media all and (max-width:650px){
+.navi {display:none;}
+.mobile_nav{display: block;}
+.header {margin-top:60px;}
 
- @media all and (max-width:650px) {
- 	@import "navi-accordion.less";
- }
+label[for="nav-trigger"] {
+		display: block;
+	}
+}
+
+.navigation {
+  /* critical sizing and position styles */
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 0;
+
+  /* non-critical appearance styles */
+  list-style: none;
+  background: @info;
+  padding:0;
+  padding-top:45px;
+}
+
+/* Navigation Menu - List items */
+.nav-item {
+  /* non-critical appearance styles */
+  width:100%;
+  border-bottom: 1px solid @info-light;
+}
+
+.nav-item a {
+  /* non-critical appearance styles */
+  display: block;
+  padding: @space-base;
+  background: @info;
+  text-decoration: none;
+}
+
+.nav-item a:hover {
+  color: @color-F;
+  background:@primary;
+}
+
+.nav-item:before {
+	content: '';
+	padding:0;
+}
+
+/* Site Wrapper - Everything that isn't navigation */
+.site-wrap {
+  /* Critical position and size styles */
+  min-height: 100%;
+  min-width: 100%;
+  background-color: white; /* Needs a background or else the nav will show through */
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+  z-index: 1;
+}
+
+/* Nav Trigger */
+.nav-trigger {
+  /* critical styles - hide the checkbox input */
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+}
+
+label[for="nav-trigger"] {
+  /* critical positioning styles */
+  position: fixed;
+  left: @space-base; top: @space-base;
+  z-index: 2;
+
+  /* non-critical apperance styles */
+  height: 30px;
+  width: 30px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' version='1.1' x='0px' y='0px' width='30px' height='30px' viewBox='0 0 30 30' enable-background='new 0 0 30 30' xml:space='preserve'><rect width='30' height='6'/><rect y='24' width='30' height='6'/><rect y='12' width='30' height='6'/></svg>");
+  background-size: contain;
+}
+
+/* Make the Magic Happen */
+.nav-trigger + label, .site-wrap {
+  transition: left 0.5s;
+}
+
+.nav-trigger:checked + label {
+  left: 215px;
+}
+
+.nav-trigger:checked ~ .site-wrap {
+  left: 200px;
+  box-shadow: 0 0 10px 1px rgba(0,0,0,0.5);
+}
+
+.mobile_nav {
+	width:100%;
+	height: 60px;
+	background: @warning;
+	position: fixed;
+	z-index:0;
+	top:0;
+}
+
 
 .bgdanger {background-color:@danger};
 .bgwarning {background-color:@warning};

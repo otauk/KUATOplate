@@ -11,7 +11,19 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 	</head>
 	<body>
-		<div class="wrapper">
+		<ul class="navigation">
+			<li class="nav-item"><a href="#">Home</a></li>
+			<li class="nav-item"><a href="#">Portfolio</a></li>
+			<li class="nav-item"><a href="#">About</a></li>
+			<li class="nav-item"><a href="#">Blog</a></li>
+			<li class="nav-item"><a href="#">Contact</a></li>
+		</ul>
+		<input type="checkbox" id="nav-trigger" class="nav-trigger" />
+		<label for="nav-trigger"></label>
+
+
+		<div class="site-wrap">
+			<div class="mobile_nav"></div>
 			<div class="header"></div>
 			<div class="navi">
 				<nav>
@@ -55,7 +67,6 @@
 		                </li>
 		            </ul>
 				</nav>
-
         </div>
 			<div class="main">
 				<h1>Headline h1</h1>
