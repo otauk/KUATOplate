@@ -4,8 +4,7 @@
 		<title>KUATOplate</title>
 		<!-- Font -->
 		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-<!-- ~~~~~~~~~~~~~~~~~~~~| FONT |~~~~~~~~~~~~~~~~~~~~ -->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<!-- Stylesheet -->
 		<link href="css/custom-base.css" rel="stylesheet" type="text/css"/>
 		<!-- jQuery -->
@@ -15,12 +14,49 @@
 		<div class="wrapper">
 			<div class="header"></div>
 			<div class="navi">
-				<ul>
-					<li class="active">Page 1</li>
-					<li>Page 2</li>
-					<li>Page 3</li>
-				</ul>
-			</div>
+				<nav>
+					<ul>
+		                <li class = "cat1">
+		                    <a class="navitem" href="#">Home</a>
+		                </li>
+		                <li class = "cat2">
+		                    <a class="navitem" href="#">Über uns</a>
+		                    <ul>
+		                        <li><a href="#">Wer wir sind</a></li>
+		                        <li><a href="#">Was wir machen</a></li>
+		                        <li><a href="#">Unsere Ziele</a></li>
+		                        <li><a href="#">Unser Team</a></li>
+		                    </ul>
+		                </li>
+		                <li class = "cat3">
+		                     <a class="navitem"  href="#">Leistungen</a>
+		                     <ul>
+		                         <li><a href="#">Webdesign</a></li>
+		                         <li><a href="#">Programmierung</a></li>
+		                         <li><a href="#">Online Marketing</a></li>
+		                         <li><a href="#">Suchmaschinenoptimierung</a></li>
+		                     </ul>
+		                </li>
+		                <li class = "cat4">
+		                    <a class="navitem"  href="#">Referenzen</a>
+		                    <ul>
+		                        <li><a href="#">Webseiten</a></li>
+		                        <li><a href="#">Themes & Templates</a></li>
+		                        <li><a href="#">Plugins</a></li>
+		                    </ul>
+		                </li>
+		                <li class = "cat5">
+		                    <a class="navitem" href="#">Kontakt</a>
+		                    <ul>
+		                        <li><a href="#">Deutschland</a></li>
+		                        <li><a href="#">Amerika</a></li>
+		                        <li><a href="#">Spanien</a></li>
+		                    </ul>
+		                </li>
+		            </ul>
+				</nav>
+
+        </div>
 			<div class="main">
 				<h1>Headline h1</h1>
 				<p>
@@ -119,5 +155,4 @@
 			</div>
 		</div>
 	</body>
-</script>
 </html>

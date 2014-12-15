@@ -41,8 +41,16 @@
 *	FONTS
 *	=============================================
 */
-@font:					'OpenSans';
-@font-FA:			'FontAwesome';
+.font-base () {
+	font-family: 'OpenSans', sans-serif;
+	 font-weight: normal;
+	 font-style: normal;
+	}
+.font-FA () {
+	font-family: 'FontAwesome';
+	 font-weight: normal;
+	 font-style: normal;
+	}
 @fs-base:			14px;
 @fs-large:         	ceil((@fs-base * 1.25)); // ~18px
 @fs-small:         	ceil((@fs-base * 0.85)); // ~12px
@@ -52,7 +60,7 @@
 @fs-h4:            	ceil((@fs-base * 1.25)); // ~18px
 @fs-h5:            	@fs-base;
 @fs-h6:            	ceil((@fs-base * 0.85)); // ~12px
-@line-height-base:        1.428571429; // 20/14
+@line-height-base:        1.42857143;
 /*
 *	=============================================
 *	ICONS
@@ -216,17 +224,12 @@
 *	SITE-SPECIFIC (auslagern)
 *	=============================================
 */
-
+*{box-sizing: border-box;}
 .container {
     width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
+    //		Set if needed by design -> max-width: 1200px;
+    // 	...then position it -> margin: 0 auto;
 	}
-
-*{
-	 box-sizing: border-box;
-	}
-
 /*-- our cleafix hack -- */
 .row:before,
 .row:after {
@@ -234,7 +237,6 @@
     display: table ;
     clear:both;
 	}
-
 [class*='col-'] {
     float: left;
     min-height: 1px;
@@ -243,14 +245,12 @@
     padding: @space-base;
     background-color: @info;
 	}
-
 .col-1{ width: 16.66%; }
 .col-2{ width: 33.33%; }
 .col-3{ width: 50%;    }
 .col-4{ width: 66.66%; }
 .col-5{ width: 83.33%; }
 .col-6{ width: 100%;   }
-
 @media all and (max-width:800px){
     .col-1{ width: 33.33%;  }
     .col-2{ width: 50%;     }
@@ -258,16 +258,13 @@
     .col-4{ width: 100%;    }
     .col-5{ width: 100%;    }
     .col-6{ width: 100%;    }
-
     .row .col-2:last-of-type{
         width: 100%;
     }
-
     .row .col-5 ~ .col-1{
         width: 100%;
     }
 }
-
 @media all and (max-width:650px){
     .col-1{ width: 50%;     }
     .col-2{ width: 100%;    }
@@ -276,10 +273,8 @@
     .col-5{ width: 100%;    }
     .col-6{ width: 100%;    }
 }
-
+// just for testing purposes
 .outline, .outline *{outline: 1px solid @primary;}
-
-
 /*-- some extra column content styling --*/
 [class*='col-'] > p {
  background-color: @primary-light;
@@ -288,17 +283,17 @@
  text-align: center;
  color: white;
 }
-
-
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	body
+*	%%%%%%%%%%%%%%%%%%%%
+*/
 body {
-	font-family: @font;
+	.font-base;
 	font-size: @fs-base;
-	line-height: @line-height-base;
 	background: @color-F;
 	margin: 0;
-	padding: 0;
 }
-
 .header, .footer {
 	min-height: @medium-em;
 	background-color: @primary;
@@ -307,32 +302,30 @@ body {
 .main {
 	padding-left: @space-base;
 	padding-right: @space-base;
+	line-height: @line-height-base;
 }
-.navi {
-	border-bottom:1px solid @info;
-	text-align: left;
-	& ul {
-		margin:0;
-		padding: @space-base;
-		& li {
-			margin-right:-4px;
-			cursor: pointer;
-			display: inline;
-			padding: @space-base;
-			&:hover, &.active {
-				background-color: @info;
-			}
-			&:before {
-				content:'';
-			}
-		}
-	}
-}
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	navigation
+*	%%%%%%%%%%%%%%%%%%%%
+*/
+
+ @import "navi-dropdown.less";
+
+ @media all and (max-width:650px) {
+ 	@import "navi-accordion.less";
+ }
+
 .bgdanger {background-color:@danger};
 .bgwarning {background-color:@warning};
 .bginfo {background-color:@info};
 .bgsuccess {background-color:@success};
 .bgprimary {background-color:@primary};
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	links
+*	%%%%%%%%%%%%%%%%%%%%
+*/
 a {
 	&:link, &:visited {
 		color:@primary;
@@ -343,6 +336,11 @@ a {
 		color: @color-F;
 	}
 }
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	headlines
+*	%%%%%%%%%%%%%%%%%%%%
+*/
 h1, h2, h3, h4, h5, h6 {
 	color:@danger;
 }
@@ -353,11 +351,16 @@ h1 {
 h2 {
 	font-size:@fs-h2;
 	}
+	/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	lists
+*	%%%%%%%%%%%%%%%%%%%%
+*/
 ul {
 	padding: @space-base;
 	list-style-type: none;
 	& li:before {
-		font-family: @font-FA;
+		.font-FA;
 		content: @icon-list;
 		padding-right: 5px;
 	}
@@ -365,20 +368,25 @@ ul {
 		padding:0 @space-base;
 		margin-left:-5px;
 		& li:before {
-			font-family: @font-FA;
+			.font-FA;
 			content:  @icon-list@icon-list;
 			padding-right: 5px;
 		}
 		& ul {
 			margin-left:3px;
 			& li:before {
-			font-family: @font-FA;
+			.font-FA;
 			content:  @icon-list@icon-list@icon-list;
 			padding-right: 5px;
 			}
 		}
 	}
 }
+/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	forms
+*	%%%%%%%%%%%%%%%%%%%%
+*/
 input {
 	.border-radius(4px);
 	border: 1px solid @primary;
@@ -419,6 +427,11 @@ input {
 		opacity: @opacity-none;
 		}
 	}
+	/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	alert
+*	%%%%%%%%%%%%%%%%%%%%
+*/
 .alert {
     .border-radius(4px);
     display: block;
@@ -427,7 +440,7 @@ input {
 	margin-bottom:@space-base;
     vertical-align: middle;
     	&:before {
-			font-family: @font-FA;
+			.font-FA;
 			padding-right: @space-base;
 		}
 		&.primary {
@@ -461,6 +474,11 @@ input {
 	    			}
 	    	}
 	}
+	/*
+*	%%%%%%%%%%%%%%%%%%%%
+* 	tables
+*	%%%%%%%%%%%%%%%%%%%%
+*/
 .tbl {
 	width: @xlarge-percent;
 	border-collapse: collapse;

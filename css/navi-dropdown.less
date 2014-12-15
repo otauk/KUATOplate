@@ -1,0 +1,60 @@
+nav {
+    width: auto;
+    // set border-top on ul li ul if you use this
+    border-bottom: 1px solid @info;
+    & ul {
+    padding: 0px;
+    margin: 0px;
+    background-color: @info-light;
+    	&:after {
+	    	clear: both;
+		    content: " ";
+		    display: block;
+		    font-size: 0;
+		    height: 0;
+		    visibility: hidden;
+    	}
+    }
+    & li {
+	    background-color: @info-light;
+	     list-style: none;
+		 float:left;
+    	&:before {
+	    	content: none !important;
+    	}
+    	&:hover {
+	    	& ul {
+		    	visibility: visible;
+	    	}
+    	}
+    	& a {
+	    	text-decoration: none;
+		    display: block;
+		    color: #333;
+		    padding: @space-base @space-large;
+    	}
+    	& ul {
+	    	display: inline;
+		    visibility: hidden;
+		    position: absolute;
+		    padding:0px;
+		    margin-left:0px;
+		    // if nav has border-bottom, set this
+		    border-top: 1px solid @info;
+		    & li {
+			    float: none;
+			    & a {
+				    // Want some Icons in front of the <li>?
+				    &:before {
+					  .font-FA ();
+					  content: @icon-list;
+					  padding-right: @space-base;
+					}
+					&:hover {
+				    	color:@color-F;
+			    	}
+		    	}
+    		}
+    	}
+    }
+}
