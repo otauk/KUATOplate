@@ -61,6 +61,13 @@
 @fs-h5:            	@fs-base;
 @fs-h6:            	ceil((@fs-base * 0.85)); // ~12px
 @line-height-base:        1.42857143;
+
+.hyphen () {
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
+	}
+
 /*
 *	=============================================
 *	ICONS
@@ -290,6 +297,7 @@
 */
 body {
 	.font-base;
+	.hyphen;
 	font-size: @fs-base;
 	background: @info;
 	margin: 0;
