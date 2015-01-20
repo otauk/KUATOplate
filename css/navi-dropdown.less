@@ -1,60 +1,103 @@
-nav {
-    width: auto;
-    // set border-top on ul li ul if you use this
-    border-bottom: 1px solid @info;
-    & ul {
-    padding: 0px;
-    margin: 0px;
-    background-color: @info-light;
-    	&:after {
-	    	clear: both;
-		    content: " ";
-		    display: block;
-		    font-size: 0;
-		    height: 0;
-		    visibility: hidden;
-    	}
-    }
-    & li {
-	    background-color: @info-light;
-	     list-style: none;
-		 float:left;
-    	&:before {
-	    	content: none !important;
-    	}
-    	&:hover {
-	    	& ul {
-		    	visibility: visible;
-	    	}
-    	}
-    	& a {
-	    	text-decoration: none;
-		    display: block;
-		    color: #333;
-		    padding: @space-base @space-large;
-    	}
-    	& ul {
-	    	display: inline;
-		    visibility: hidden;
-		    position: absolute;
-		    padding:0px;
-		    margin-left:0px;
-		    // if nav has border-bottom, set this
-		    border-top: 1px solid @info;
-		    & li {
-			    float: none;
-			    & a {
-				    // Want some Icons in front of the <li>?
-				    &:before {
-					  .font-FA ();
-					  content: @icon-list;
-					  padding-right: @space-base;
-					}
-					&:hover {
-				    	color:@color-F;
-			    	}
-		    	}
-    		}
-    	}
-    }
+/* General menu styling */
+.nav {
+position: relative;
+margin: 0;
+padding: 0;
+height: 110px;
+background: rgba(255,255,255,0.6);
+}
+/* The main navigation link containers */
+.nav>li {
+	display: block;
+	float: right; /* Displaying them on the same line */
+	margin: 0;
+	padding: 0;
+	&:before {
+		content: none;
+	}
+}
+/* The main navigation links */
+.nav>li>a {
+/* Layout */
+display: block;
+position: relative;
+padding: 40px;
+/* Text */
+color: @color-0;
+font-size: 22px;
+text-decoration: none;
+/* Making the color to change on hover with a transition */
+-webkit-transition: color .3s ease-in;
+-moz-transition: color .3s ease-in;
+-o-transition: color .3s ease-in;
+-ms-transition: color .3s ease-in;
+}
+/* Changing the color on hover */
+.nav>li>a:hover, .nav>li:hover>a {
+border-bottom: 5px solid @info;
+}
+/* The submenus */
+.nav ul {
+position: absolute;
+margin: 0;
+padding: 0;
+list-style: none;
+display: block;
+}
+/* General layout settings for the link containers of the submenus */
+.nav ul li {
+	.font-base ();
+	position: absolute;
+	top: -9999px; /* Hiding them */
+	height: 0px;
+	display: block;
+	margin: 0;
+	padding: 0;
+	/* Making them to expand their height with a transition, for a slide effect */
+	-webkit-transition: height .2s ease-in;
+	-moz-transition: height .2s ease-in;
+	-o-transition: height .2s ease-in;
+	-ms-transition: height .2s ease-in;
+	&:before {
+		content: none;
+	}
+
+}
+/* Displays the submenu links, by expading their containers (with a transition, previously defined) and by repositioning them */
+.dropdown:hover>ul>li {
+height: 30px;
+position: relative;
+top: auto;
+}
+/* The submenu links */
+.nav ul li a {
+/* Layout */
+padding: 0 @space-base;
+width: auto;
+display: block;
+position: relative;
+/* Text */
+color: @color-0;
+text-decoration: none;
+/* Background & effects */
+background: rgba(255,255,255,0.6);
+-webkit-transition: color .1s ease-in, background .2s ease-in;
+-moz-transition: color .1s ease-in, background .2s ease-in;
+-o-transition: color .1s ease-in, background .2s ease-in;
+-ms-transition: color .1s ease-in, background .2s ease-in;
+}
+/* Changing the link's color and background on hover */
+.nav ul li:hover>a, .nav ul li a:hover {
+color: @primary;
+}
+/* Making the level 2 (or higher) submenus to appear at the right of their parent */
+.nav ul .dropdown:hover ul {
+margin-left: 100%;
+width:100%;
+top: 0px;
+}
+
+.nav ul .dropdown ul {
+//border-left: 5px solid red;
+padding-left:5px;
 }

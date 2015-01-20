@@ -10,8 +10,16 @@
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 		<!-- Stylesheet -->
 		<link href="css/custom-base.css" rel="stylesheet" type="text/css"/>
-		<!-- jQuery -->
+		<link href="css/jquery.lightbox.css" rel="stylesheet" type="text/css"/>
+		<!-- Scripts -->
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.lightbox.min.js" ></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				// ID der Galerie aufrufen und lightbox Funktion ausführen
+				$('.gallery a').lightBox();
+			});
+		</script>
 	</head>
 	<body>
 		<ul class="navigation">
@@ -80,7 +88,16 @@
 				<p>
 					Lorem ipsum dolor sit amet, <a href="#">consectetur adipisicing elit</a>, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 				</p>
-				<div class="container outline">
+				<div class="container">
+				    <div class="row">
+					    <div class="col-6">
+						    <div class="gallery">
+								<ul><?php include("inc/gallery.php");?></ul>
+						    </div>
+					    </div>
+				    </div>
+				</div>
+				<div class="container">
 				    <div class="row">
 				        <div class="col-1"><p>col-1</p></div>
 				        <div class="col-1"><p>col-1</p></div>
