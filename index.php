@@ -35,51 +35,14 @@
 
 		<div class="site-wrap">
 			<div class="mobile_nav"></div>
-			<div class="header"></div>
-			<div class="navi">
-				<nav>
-					<ul>
-		                <li class = "cat1">
-		                    <a class="navitem" href="#">Home</a>
-		                </li>
-		                <li class = "cat2">
-		                    <a class="navitem" href="#">Über uns</a>
-		                    <ul>
-		                        <li><a href="#">Wer wir sind</a></li>
-		                        <li><a href="#">Was wir machen</a></li>
-		                        <li><a href="#">Unsere Ziele</a></li>
-		                        <li><a href="#">Unser Team</a></li>
-		                    </ul>
-		                </li>
-		                <li class = "cat3">
-		                     <a class="navitem"  href="#">Leistungen</a>
-		                     <ul>
-		                         <li><a href="#">Webdesign</a></li>
-		                         <li><a href="#">Programmierung</a></li>
-		                         <li><a href="#">Online Marketing</a></li>
-		                         <li><a href="#">Suchmaschinenoptimierung</a></li>
-		                     </ul>
-		                </li>
-		                <li class = "cat4">
-		                    <a class="navitem"  href="#">Referenzen</a>
-		                    <ul>
-		                        <li><a href="#">Webseiten</a></li>
-		                        <li><a href="#">Themes & Templates</a></li>
-		                        <li><a href="#">Plugins</a></li>
-		                    </ul>
-		                </li>
-		                <li class = "cat5">
-		                    <a class="navitem" href="#">Kontakt</a>
-		                    <ul>
-		                        <li><a href="#">Deutschland</a></li>
-		                        <li><a href="#">Amerika</a></li>
-		                        <li><a href="#">Spanien</a></li>
-		                    </ul>
-		                </li>
-		            </ul>
-				</nav>
-        </div>
-			<div class="main">
+			<section id="header">
+				<div class="header"></div>
+			</section>
+			<section id="navigation">
+			<?php include("inc/navi-dropdown.php");?>
+			</section>
+			<section id="main">
+				<div class="main">
 				<h1>Headline h1</h1>
 				<p>
 					Some text in a paragraph
@@ -182,8 +145,10 @@
 				<div class="alert warning">Warnung</div>
 				<div class="alert danger">Gefahr</div>
 			</div>
-			<div class="footer">
-			</div>
+			</section>
+			<section id="footer">
+				<div class="footer"></div>
+			</section>
 		</div>
 	</body>
 </html>

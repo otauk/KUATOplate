@@ -6,7 +6,7 @@
 
 
 .row {
-	margin: @space-base;
+	margin: @space-base 0;
 	&:before, &:after {
 	display: table;
     content:"";
@@ -14,6 +14,9 @@
 	}
 	&:last-child {
 		margin-bottom: 0;
+	}
+	&.no-margin {
+		margin:0;
 	}
 }
 
@@ -24,6 +27,9 @@
     /*-- our gutter -- */
     padding: @space-base;
     background-color: @info;
+    &.no-padding {
+	    padding:0;
+    }
 }
 
 // the grid
